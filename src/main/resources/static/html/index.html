@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<head>
+    <title>这是一个登录界面</title>
+    <script type="text/javascript" src="../js/login.js"></script>
+    <script>
+        function date() {
+            var week = new Date().getDay()//获取当前日期是星期几
+            var weekString = "";
+            switch(week){
+                case 0:
+                    weekString = "天";
+                    break;
+                case 1:
+                    weekString = "一";
+                    break;
+                case 2:
+                    weekString = "二";
+                    break;
+                case 3:
+                    weekString = "三";
+                    break;
+                case 4:
+                    weekString = "四";
+                    break;
+                case 5:
+                    weekString = "五";
+                    break;
+                default:
+                    weekString = "六";
+            }
+            document.write("今天是星期"+weekString);
+        }
+    </script>
+</head>
+<body>
+<table>
+    <form method="post" action="/springboot/login">
+        账号：<input type="text" id="userName" name="userName" onblur="checkName()"/><span id="checkMessage"></span><br/>
+        密码：<input type="password" id="password" name="password"/><br/>
+        <input type="submit" id="login" value="登录"/>
+        <input type="button" value="注册"/><br/>
+    </form>
+</table>
+</body>
+</html>
